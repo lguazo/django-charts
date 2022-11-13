@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div id="container">
+  <div class="row d-flex justify-content-around general-content" style="max-height: 100vh; overflow-y: scroll;">
+    <!-- Start New Content -->
+    <nav class="bg-dark navbar-dark">
+      <div class="container">
+        <a href="" class="navbar-brand"><i class="fas fa-tree mr-2"></i>Cartagena Como Vamos</a>
+      </div>
+    </nav>
+    <section id="headerr" class="jumbotron text-center">
+      <h1 class="display-3">INFORME CALIDAD DE VIDA DE CARTAGENA</h1>
+      <p class="lead">Analisis de las dimensiones de cartagena como vamos 2021</p>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <div class="card">
+              <!-- {% load static %} -->
+              <img src="{% static  'img/muerteviolenta.png' %}" alt="" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Muertes violentas</h5>
+                <p class="card-text">La seguridad en Cartagena ha mantenido las alertas encendidas. A pesar de la
+                  pandemia,
+                  los casos de muertes violentas en la ciudad muestran una tendencia creciente.</p>
+                <a href="{% url 'deaths-violent' %}" class="btn btn-outline-success btn-sm">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <div class="card">
+              <!-- {% load static %} -->
+              <img src="{% static  'img/movilidad.png' %}" alt="" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title"></br></br>Movilidad</h5>
+                <p class="card-text">La matricula de vehiculo venia de baja desde el 2019 y la pandemia la complico.</br></br></br></p>
+                <a href="{% url 'vehicle' %}" class="btn btn-outline-success btn-sm">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <div class="card">
+              <!-- {% load static %} -->
+              <img src="{% static  'img/vivienda.png' %}" alt="" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Viviendas</h5>
+                <p class="card-text">Viviendas contruidos por sectores publicos y privados en un determinado estrato.</br></br></br>
+                </p>
+                <a href="{% url 'living' %}" class="btn btn-outline-success btn-sm">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <div class="card">
+              <!-- {% load static %} -->
+              <img src="{% static  'img/vial.png' %}" alt="" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Infraestructura vial</h5>
+                <p class="card-text">La infraestrucutura vial de Cartagena no crece desde el año 2012.</p>
+                <a href="{% url 'infrastructure-road' %}" class="btn btn-outline-success btn-sm">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <div class="card">
+              <!-- {% load static %} -->
+              <img src="{% static  'img/violenciadomestica.png' %}" alt="" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Volencia Domestica</h5>
+                <p class="card-text">La violencia intrafamiliar va en aumento y según los resultados, las mujeres son
+                  las
+                  más afectadas.</br></br></p>
+                <a href="{% url 'domestic-violence' %}" class="btn btn-outline-success btn-sm">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End New Content -->
+
+  </div {% endblock %}
