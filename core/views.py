@@ -8,10 +8,13 @@ from core.model_chart.vehicle import vehicleType, vehicleYear
 
 from core.models import DomesticViolence, InfrastructureRoad, LivingPlace, Vehicle, ViolentDeaths
 from core.model_chart.deaths_violent import numberDeathsType, numberDeathsYear
+
+from django.contrib import admin
 # Create your views here.
 
 
 def home(request):
+    print(admin.site.urls)
     return render(request, 'home.html')
 
 def queries(
