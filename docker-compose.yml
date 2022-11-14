@@ -1,0 +1,37 @@
+version: '3.1'
+
+services:
+  db_mysql:
+    image: mysql:5.7
+    env_file: .env
+    container_name: mysql-django-dashboard
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  django_app:
+    build: .
+    env_file: .env
+    volumes:
+      - static:/code/core/static
+      - .:/code
+    depends_on:
+      - db_mysql
+
+  nginx:
+    image: nginx:1.13
+    ports:
+      - 8000:80
+    volumes:
+      - ./config/nginx/conf.d:/etc/nginx/conf.d
+      - static:/code/core/static
+    depends_on:
+      - django_app
+
+volumes:
+  .:
+  mysql_data:
+  static:
