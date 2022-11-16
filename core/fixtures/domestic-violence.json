@@ -133,5 +133,68 @@
             "type_id": 1,
             "gender_id": 2
         }
+    },
+    {
+        "model": "core.domesticviolence",
+        "fields": {
+            "id": 16,
+            "year": 2021,
+            "type_id": 1,
+            "gender_id": 2
+        }
+    },
+    {
+        "model": "core.domesticviolence",
+        "fields": {
+            "id": 17,
+            "year": 2021,
+            "type_id": 1,
+            "gender_id": 2
+        }
+    },
+    {
+        "model": "core.domesticviolence",
+        "fields": {
+            "id": 18,
+            "year": 2021,
+            "type_id": 1,
+            "gender_id": 1
+        }
+    },
+    {
+        "model": "core.domesticviolence",
+        "fields": {
+            "id": 19,
+            "year": 2021,
+            "type_id": 1,
+            "gender_id": 2
+        }
+    },
+    {
+        "model": "core.domesticviolence",
+        "fields": {
+            "id": 20,
+            "year": 2021,
+            "type_id": 1,
+            "gender_id": 1
+        }
+    },
+    {
+        "model": "core.domesticviolence",
+        "fields": {
+            "id": 21,
+            "year": 2021,
+            "type_id": 1,
+            "gender_id": 2
+        }
+    },
+    {
+        "model": "core.domesticviolence",
+        "fields": {
+            "id": 22,
+            "year": 2022,
+            "type_id": 1,
+            "gender_id": 1
+        }
     }
 ]

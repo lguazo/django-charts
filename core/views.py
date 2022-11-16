@@ -14,7 +14,6 @@ from django.contrib import admin
 
 
 def home(request):
-    print(admin.site.urls)
     return render(request, 'home.html')
 
 def queries(
@@ -162,38 +161,6 @@ def infrastructureR(request):
     lstChart.append(infrastructureRoadState(query1))
 
     return render(request, 'graphics.html', {'lstChart': json.dumps(lstChart)})
-
-# def domesticViolence(request):
-#     query = queries(
-#         'gender__name',
-#         'gender__name',
-#         'gender_id',
-#         'gender_id'
-#     )
-
-#     return render(request, 'graphics.html', {'lstChart': json.dumps(query)})
-
-
-# def living(request):
-#     query = queries(
-#         'builtby__name',
-#         'stratum',
-#         'builtby_id',
-#         'stratum'
-#     )
-
-#     return render(request, 'graphics.html', {'lstChart': json.dumps(query)})
-
-
-# def infrastructureR(request):
-#     query = queries(
-#         'type__name',
-#         'state__name',
-#         'type_id',
-#         'state_id'
-#     )
-
-#     return render(request, 'graphics.html', {'lstChart': json.dumps(query)})
 
 
 def vehicle(request):

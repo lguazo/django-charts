@@ -11,13 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
-import environ
 from pathlib import Path
-
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, True)
-)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!5=j(tuo6z_q!mk++%xm=v8%ju2ni^t(dt6bkk^qfe$&j8dp*('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -83,21 +77,11 @@ WSGI_APPLICATION = 'dashboard.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME'    : os.environ.get('DB_NAME'     , 'django_dashboard'),
-#         'USER'    : os.environ.get('DB_USERNAME' , 'admin'),
-#         'PASSWORD': os.environ.get('DB_PASS'     , ''),
-#         'HOST'    : os.environ.get('DB_HOST'     , '127.0.0.1'),
-#         'PORT'    : os.environ.get('DB_PORT'     , 3306),
-#     }
-# }
 if os.environ.get('DB_ENGINE') and os.environ.get('DB_ENGINE') == "mysql":
     DATABASES = {
       'default': {
         'ENGINE'  : 'django.db.backends.mysql',
-        'NAME'    : os.environ.get('MYSQL_DATABASE'          , 'django_dashboard'),
+        'NAME'    : os.environ.get('MYSQL_DATABASE'         , 'django_dashboard'),
         'USER'    : os.environ.get('MYSQL_ROOT_USER'        , 'admin'),
         'PASSWORD': os.environ.get('MYSQL_ROOT_PASSWORD'    , ''),
         'HOST'    : os.environ.get('MYSQL_DB_HOST'          , '127.0.0.1'),
@@ -108,7 +92,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'db.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
 
@@ -148,6 +132,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+    
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static/",
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
